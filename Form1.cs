@@ -79,15 +79,28 @@ namespace To_Do_List_Project_1
             }
         }
 
+        void RemoveTaskByName(string Task)
+        {
+            for (byte i = 0;i < checkedListBox1.Items.Count;i++)
+            {
+                if (checkedListBox1.Items[i].ToString() == Task)
+                { 
+                    checkedListBox1.Items.RemoveAt(i);
+                    return;
+                }
+                
+            }
+        }
         private void btnRemoveCompletedTasks_Click(object sender, EventArgs e)
         {
             bool IsRemovedon = false;
-            for (byte i = 0;i < (checkedListBox1.Items.Count + 1);i++)
+            
+            for (byte i = 0;i <checkedListBox1.Items.Count;i++)
             {
                 if (checkedListBox1.GetItemChecked(i))
                 {
-                    checkedListBox1.Items.RemoveAt(i);
-                    IsRemovedon = true;
+                    RemoveTaskByName(checkedListBox1.Items[i].ToString());
+                    i--;
                 }
             }
 
