@@ -45,6 +45,8 @@ namespace To_Do_List_Project_1
 
         byte CountRepeatedTask(string Task)
         {
+
+
             byte count = 0;
             for (byte i = 0;i < checkedListBox1.Items.Count;i++)
             {
