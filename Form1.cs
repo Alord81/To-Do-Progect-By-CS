@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,11 +22,11 @@ namespace To_Do_List_Project_1
         }
 
 
-        bool ItIsEmpty()
+        bool IsEmpty()
         {
             if (tbTask.Text == "")
             {
-                MessageBox.Show("The Task Not Add/Remove Becuse It \"Empty\"!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("The task did not add/Remove becuse it \"Empty\"!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
             return false;
@@ -34,7 +34,7 @@ namespace To_Do_List_Project_1
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
-            if (ItIsEmpty()) return;
+            if (IsEmpty()) return;
 
             string Task = $"{tbTask.Text}";
             checkedListBox1.Items.Add(Task);
@@ -43,7 +43,7 @@ namespace To_Do_List_Project_1
 
         private void btnRemoveThisTask_Click(object sender, EventArgs e)
         {
-            if (ItIsEmpty()) return;
+            if (IsEmpty()) return;
 
             string TheTask = (string)tbTask.Text;
 
