@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,5 +63,39 @@ namespace To_Do_List_Project_1
             tbTask.Focus();
         }
 
+        private void btnCompletedAllTasks_Click(object sender, EventArgs e)
+        {
+            for (byte i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, true);
+            }
+        }
+
+        private void btnUncompletedAllTasks_Click(object sender, EventArgs e)
+        {
+            for (byte i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                checkedListBox1.SetItemChecked(i, false);
+            }
+        }
+
+        private void btnRemoveCompletedTasks_Click(object sender, EventArgs e)
+        {
+            bool IsRemovedon = false;
+            for (byte i = 0;i < (checkedListBox1.Items.Count + 1);i++)
+            {
+                if (checkedListBox1.GetItemChecked(i))
+                {
+                    checkedListBox1.Items.RemoveAt(i);
+                    IsRemovedon = true;
+                }
+            }
+
+            if (IsRemovedon)
+            {
+                MessageBox.Show("The Task(s) Remove Successfully!", "Remove Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        }
     }
 }
