@@ -12,7 +12,7 @@ namespace To_Do_List_Project_1
 {
     /*
         To-Do List Project .
-        It took me 30 minutes.
+        It took me 1 hour and 15 minutes.
     */
     public partial class Form1 : Form
     {
@@ -32,13 +32,44 @@ namespace To_Do_List_Project_1
             return false;
         }
 
+        bool IsExist(string Task)
+        {
+            for (byte i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (checkedListBox1.Items[i].ToString() == Task.ToString())
+                    return true;
+            }
+
+            return false;
+        }
+
+        byte CountRepeatedTask(string Task)
+        {
+            byte count = 0;
+            for (byte i = 0;i < checkedListBox1.Items.Count;i++)
+            {
+                if ((checkedListBox1.Items[i].ToString() == (count == 0 ? Task : $"{Task} - {count}")))
+                    count++;
+            }
+
+            return count;
+        }
+
         private void btnAddTask_Click(object sender, EventArgs e)
         {
             if (IsEmpty()) return;
 
+
             string Task = $"{tbTask.Text}";
+            
+            if (IsExist(Task))
+            {
+                Task = $"{tbTask.Text} - {CountRepeatedTask(tbTask.Text)}";
+            }
+
             checkedListBox1.Items.Add(Task);
             MessageBox.Show("The Task Add Successfully!","Add Successfully",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            tbTask.Text = "";
         }
 
         private void btnRemoveThisTask_Click(object sender, EventArgs e)
@@ -110,5 +141,12 @@ namespace To_Do_List_Project_1
             }
 
         }
+
+        private void btnRemoveAllTasks_Click(object sender, EventArgs e)
+        {
+            while(checkedListBox1.Items.Count != 0)
+                checkedListBox1.Items.RemoveAt(0);
+        }
+
     }
 }

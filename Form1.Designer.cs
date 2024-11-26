@@ -30,6 +30,7 @@
         {
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRemoveAllTasks = new System.Windows.Forms.Button();
             this.btnRemoveCompletedTasks = new System.Windows.Forms.Button();
             this.btnUncompletedAllTasks = new System.Windows.Forms.Button();
             this.btnCompletedAllTasks = new System.Windows.Forms.Button();
@@ -49,11 +50,12 @@
             this.checkedListBox1.Location = new System.Drawing.Point(785, 0);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(412, 735);
-            this.checkedListBox1.TabIndex = 0;
+            this.checkedListBox1.TabIndex = 7;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MistyRose;
+            this.panel1.Controls.Add(this.btnRemoveAllTasks);
             this.panel1.Controls.Add(this.btnRemoveCompletedTasks);
             this.panel1.Controls.Add(this.btnUncompletedAllTasks);
             this.panel1.Controls.Add(this.btnCompletedAllTasks);
@@ -67,6 +69,21 @@
             this.panel1.Size = new System.Drawing.Size(785, 735);
             this.panel1.TabIndex = 2;
             // 
+            // btnRemoveAllTasks
+            // 
+            this.btnRemoveAllTasks.BackColor = System.Drawing.Color.Tomato;
+            this.btnRemoveAllTasks.FlatAppearance.BorderSize = 0;
+            this.btnRemoveAllTasks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveAllTasks.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveAllTasks.Location = new System.Drawing.Point(231, 289);
+            this.btnRemoveAllTasks.Margin = new System.Windows.Forms.Padding(28);
+            this.btnRemoveAllTasks.Name = "btnRemoveAllTasks";
+            this.btnRemoveAllTasks.Size = new System.Drawing.Size(180, 50);
+            this.btnRemoveAllTasks.TabIndex = 6;
+            this.btnRemoveAllTasks.Text = "Remove All Tasks";
+            this.btnRemoveAllTasks.UseVisualStyleBackColor = false;
+            this.btnRemoveAllTasks.Click += new System.EventHandler(this.btnRemoveAllTasks_Click);
+            // 
             // btnRemoveCompletedTasks
             // 
             this.btnRemoveCompletedTasks.BackColor = System.Drawing.Color.Tomato;
@@ -77,7 +94,7 @@
             this.btnRemoveCompletedTasks.Margin = new System.Windows.Forms.Padding(28);
             this.btnRemoveCompletedTasks.Name = "btnRemoveCompletedTasks";
             this.btnRemoveCompletedTasks.Size = new System.Drawing.Size(180, 50);
-            this.btnRemoveCompletedTasks.TabIndex = 8;
+            this.btnRemoveCompletedTasks.TabIndex = 5;
             this.btnRemoveCompletedTasks.Text = "Remove Completed Tasks";
             this.btnRemoveCompletedTasks.UseVisualStyleBackColor = false;
             this.btnRemoveCompletedTasks.Click += new System.EventHandler(this.btnRemoveCompletedTasks_Click);
@@ -92,7 +109,7 @@
             this.btnUncompletedAllTasks.Margin = new System.Windows.Forms.Padding(28);
             this.btnUncompletedAllTasks.Name = "btnUncompletedAllTasks";
             this.btnUncompletedAllTasks.Size = new System.Drawing.Size(180, 50);
-            this.btnUncompletedAllTasks.TabIndex = 7;
+            this.btnUncompletedAllTasks.TabIndex = 4;
             this.btnUncompletedAllTasks.Text = "Uncompleted All Tasks";
             this.btnUncompletedAllTasks.UseVisualStyleBackColor = false;
             this.btnUncompletedAllTasks.Click += new System.EventHandler(this.btnUncompletedAllTasks_Click);
@@ -107,7 +124,7 @@
             this.btnCompletedAllTasks.Margin = new System.Windows.Forms.Padding(28);
             this.btnCompletedAllTasks.Name = "btnCompletedAllTasks";
             this.btnCompletedAllTasks.Size = new System.Drawing.Size(180, 50);
-            this.btnCompletedAllTasks.TabIndex = 6;
+            this.btnCompletedAllTasks.TabIndex = 3;
             this.btnCompletedAllTasks.Text = "Completed All Tasks";
             this.btnCompletedAllTasks.UseVisualStyleBackColor = false;
             this.btnCompletedAllTasks.Click += new System.EventHandler(this.btnCompletedAllTasks_Click);
@@ -122,7 +139,7 @@
             this.btnRemoveThisTask.Margin = new System.Windows.Forms.Padding(28);
             this.btnRemoveThisTask.Name = "btnRemoveThisTask";
             this.btnRemoveThisTask.Size = new System.Drawing.Size(180, 50);
-            this.btnRemoveThisTask.TabIndex = 5;
+            this.btnRemoveThisTask.TabIndex = 2;
             this.btnRemoveThisTask.Text = "Remove This Task";
             this.btnRemoveThisTask.UseVisualStyleBackColor = false;
             this.btnRemoveThisTask.Click += new System.EventHandler(this.btnRemoveThisTask_Click);
@@ -137,7 +154,7 @@
             this.btnAddTask.Margin = new System.Windows.Forms.Padding(28);
             this.btnAddTask.Name = "btnAddTask";
             this.btnAddTask.Size = new System.Drawing.Size(180, 50);
-            this.btnAddTask.TabIndex = 4;
+            this.btnAddTask.TabIndex = 1;
             this.btnAddTask.Text = "Add Task";
             this.btnAddTask.UseVisualStyleBackColor = false;
             this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
@@ -149,7 +166,7 @@
             this.label1.Location = new System.Drawing.Point(19, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 19);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 30;
             this.label1.Text = "Task :";
             // 
             // tbTask
@@ -161,7 +178,7 @@
             this.tbTask.Multiline = true;
             this.tbTask.Name = "tbTask";
             this.tbTask.Size = new System.Drawing.Size(388, 30);
-            this.tbTask.TabIndex = 2;
+            this.tbTask.TabIndex = 0;
             // 
             // Form1
             // 
@@ -189,6 +206,7 @@
         private System.Windows.Forms.Button btnCompletedAllTasks;
         private System.Windows.Forms.Button btnUncompletedAllTasks;
         private System.Windows.Forms.Button btnRemoveCompletedTasks;
+        private System.Windows.Forms.Button btnRemoveAllTasks;
     }
 }
 
